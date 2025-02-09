@@ -1,3 +1,7 @@
+[general]
+import = [
+    "C:\\Users\\user\\AppData\\Roaming\\alacritty\\themes\\themes\\kanagawa_dragon.toml"]
+
 [colors.bright]
 black = "0x5c6370"
 blue = "0x61afef"
@@ -24,25 +28,22 @@ foreground = "0xd5d7de"
 
 [env]
 TERM = "xterm-256color"
-
-[[keyboard.bindings]]
-action = "ScrollPageDown"
-key = "J"
-mods = "Control|Shift"
+COLORTERM = "truecolor"
+LANG = "en_US.UTF-8"
 
 [font]
-size = 12.0
+size = 12
 
 [font.bold]
-family = "JetBrainsMono"
+family = "JetBrainsMono Nerd Font"
 style = "Bold"
 
 [font.italic]
-family = "JetBrainsMono"
+family = "JetBrainsMono Nerd Font"
 style = "Italic"
 
 [font.normal]
-family = "JetBrainsMono"
+family = "JetBrainsMono Nerd Font"
 style = "Regular"
 
 [[keyboard.bindings]]
@@ -55,13 +56,29 @@ action = "Paste"
 key = "V"
 mods = "Control"
 
-[scrolling]
-history = 10000
-
 [window]
-opacity = 1.0
-dimensions = { columns = 200, lines = 20 }
+decorations = "None"
+opacity = 0.97
+dynamic_padding = true
+startup_mode = "Windowed"
+position = { x = 5, y = 5 }
+dimensions = { columns = 211, lines = 48 }
 
 [window.padding]
-x = 0
-y = 0
+x = 5
+y = 5
+
+[cursor]
+style = { shape = "Block", blinking = "Always" }
+vi_mode_style = { shape = "Block", blinking = "Always" }
+blink_interval = 500
+blink_timeout = 0
+
+[terminal.shell]
+program = "wsl"
+args = [
+    "-d",
+    "Debian",
+    "--cd",
+    "~"
+]
